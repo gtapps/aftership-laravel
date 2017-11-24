@@ -1,6 +1,6 @@
 <?php
 
-namespace Gtapps\Aftership;
+namespace Gtapps\AfterShipLaravel;
 
 use Illuminate\Support\Facades\Facade;
 
