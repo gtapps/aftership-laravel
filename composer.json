@@ -11,8 +11,8 @@
     ],
     "require": {
         "php": "^7.0",
-        "illuminate/support": "~5.5.0",
-        "aftership/aftership-php-sdk": "^5.1"
+        "aftership/aftership-php-sdk": "^5.1",
+        "illuminate/support": "~5.5.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.3"
