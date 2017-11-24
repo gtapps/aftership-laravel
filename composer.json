@@ -39,7 +39,7 @@
                 "Gtapps\\AfterShipLaravel\\ServiceProvider"
             ],
             "aliases": {
-                "AfterShip": "Gtapps\\AfterShipLaravel\\AftershipFacade"
+                "AfterShip": "Gtapps\\AfterShipLaravel\\Facades\\Aftership"
             }
         }
     }
