@@ -19,12 +19,12 @@
     },
    "autoload": {
         "psr-4": {
-            "Gtapps\\AfterShipLaravel\\": "src"
+            "Gtapps\\AfterShipLaravel\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Gtapps\\AfterShipLaravel\\Test\\": "tests"
+            "Gtapps\\AfterShipLaravel\\Test\\": "tests/"
         }
     },
     "scripts": {
