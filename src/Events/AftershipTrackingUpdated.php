@@ -5,7 +5,7 @@ namespace  Gtapps\AfterShipLaravel\Events;
 use Illuminate\Queue\SerializesModels;
 use Extensions\Softna\Ecommerce\Models\Order;
 
-class AfterShipTrackingUpdated{
+class AftershipTrackingUpdated{
     use SerializesModels;
 
     public $eventId, $data, $trackingMessage, $order, $checkpoint;
@@ -15,9 +15,9 @@ class AfterShipTrackingUpdated{
      *
      * @return void
      */
-    public function __construct() {
-        $this->eventId = request()->input('event');
-        $this->data = request()->input('msg');
+    public function __construct($eventId, array $data) {
+        $this->eventId = $eventId;
+        $this->data =  $data;
         $this->order = Order::find($this->data['order_id']);
         if(!empty($this->data['checkpoints'])){
             $this->checkpoint = array_pop($this->data['checkpoints']);

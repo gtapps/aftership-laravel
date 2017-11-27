@@ -34,7 +34,7 @@ class AftershipServiceProvider extends ServiceProvider {
     public function register() {
         $this->mergeConfigFrom(__DIR__.'/../config/aftership-laravel.php', 'ftership-laravel');
         $this->app->singleton('aftership-laravel', function() {
-            return new AdHelper();
+            return new Aftership();
         });
     }
 

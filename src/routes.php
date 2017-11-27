@@ -5,6 +5,7 @@ use \Illuminate\Support\Facades\Config,
     \Illuminate\Support\Facades\Input,
     \Illuminate\Support\Facades\Event,
     \Illuminate\Support\Facades\Queue;
+    Gtapps\AfterShipLaravel\Events\AfterShipTrackingUpdated;
 
 $weebhookEnabled = Config::get('aftership-laravel::web_hook.enabled');
 if ($weebhookEnabled == true) {
@@ -17,7 +18,7 @@ if ($weebhookEnabled == true) {
                 throw new Exception('Listener Configuration is incomplete.');
 
             if ($listenerType == "event") {
-                Event::fire($handler, array('data' => Input::all()));
+                event(new AfterShipTrackingUpdated(request()->input('event'), request()->input('msg')));
             } elseif ($listenerType == "queue") {
                 $queueConnection = Config::get('aftership-laravel::web_hook.listener.queue_connection');
                 $queueName = Config::get('aftership-laravel::web_hook.listener.queue_name');
