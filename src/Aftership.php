@@ -5,7 +5,7 @@ namespace Gtapps\AfterShipLaravel;
 use AfterShip\Couriers;
 use AfterShip\LastCheckPoint;
 use AfterShip\Notifications;
-use AfterShip\Tracking;
+use AfterShip\Trackings;
 use Illuminate\Support\Facades\Config;
 
 class Aftership {
@@ -14,7 +14,7 @@ class Aftership {
         return new Couriers(Config::get('aftership-laravel::api_key'));
     }
 
-    public function tracking() {
+    public function trackings() {
         return new Tracking(Config::get('aftership-laravel::api_key'));
     }
 
