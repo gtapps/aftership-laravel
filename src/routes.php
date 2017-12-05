@@ -4,7 +4,7 @@ use \Illuminate\Support\Facades\Config,
     \Illuminate\Support\Facades\Route,
     \Illuminate\Support\Facades\Input,
     \Illuminate\Support\Facades\Event,
-    \Illuminate\Support\Facades\Queue;
+    \Illuminate\Support\Facades\Queue,
     Gtapps\AfterShipLaravel\Events\AfterShipTrackingUpdated;
 
 $weebhookEnabled = Config::get('aftership-laravel::web_hook.enabled');
