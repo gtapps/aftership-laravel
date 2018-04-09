@@ -15,7 +15,7 @@ class Aftership {
     }
 
     public function trackings() {
-        return new Tracking(Config::get('aftership-laravel::api_key'));
+        return new Trackings(Config::get('aftership-laravel::api_key'));
     }
 
     public function lastCheckPoint() {
