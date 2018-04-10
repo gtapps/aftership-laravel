@@ -11,19 +11,19 @@ use Illuminate\Support\Facades\Config;
 class Aftership {
 
     public function couriers() {
-        return new Couriers(Config::get('aftership-laravel::api_key'));
+        return new Couriers(config('aftership-laravel.api_key'));
     }
 
     public function trackings() {
-        return new Trackings(Config::get('aftership-laravel::api_key'));
+        return new Trackings(config('aftership-laravel.api_key'));
     }
 
     public function lastCheckPoint() {
-        return new LastCheckPoint(Config::get('aftership-laravel::api_key'));
+        return new LastCheckPoint(config('aftership-laravel.api_key'));
     }
 
     public function notifications() {
-        return new Notifications(Config::get('aftership-laravel::api_key'));
+        return new Notifications(config('aftership-laravel.api_key'));
     }
 
 }
