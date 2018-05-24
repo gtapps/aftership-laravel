@@ -36,7 +36,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Gtapps\\AfterShipLaravel\\ServiceProvider"
+                "Gtapps\\AfterShipLaravel\\AftershipServiceProvider"
             ],
             "aliases": {
                 "AfterShip": "Gtapps\\AfterShipLaravel\\Facades\\Aftership"
