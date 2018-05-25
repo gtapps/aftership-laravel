@@ -7,21 +7,21 @@ use \Illuminate\Support\Facades\Config,
     \Illuminate\Support\Facades\Queue,
     Gtapps\AfterShipLaravel\Events\AfterShipTrackingUpdated;
 
-$weebhookEnabled = Config::get('aftership-laravel::web_hook.enabled');
+$weebhookEnabled = config('aftership-laravel.web_hook.enabled', false);
 if ($weebhookEnabled == true) {
-    $routeUrl = Config::get('aftership-laravel::web_hook.route_url');
+    $routeUrl = config('aftership-laravel.web_hook.route_url');
     if (!empty($routeUrl)) {
         Route::post($routeUrl, function () {
-            $listenerType = Config::get('aftership-laravel::web_hook.listener.type');
-            $handler = Config::get('aftership-laravel::web_hook.listener.handler');
+            $listenerType = config('aftership-laravel.web_hook.listener.type');
+            $handler = config('aftership-laravel.web_hook.listener.handler');
             if (empty($listenerType) || empty($handler))
                 throw new Exception('Listener Configuration is incomplete.');
 
             if ($listenerType == "event") {
                 event(new AfterShipTrackingUpdated(request()->input('event'), request()->input('msg')));
             } elseif ($listenerType == "queue") {
-                $queueConnection = Config::get('aftership-laravel::web_hook.listener.queue_connection');
-                $queueName = Config::get('aftership-laravel::web_hook.listener.queue_name');
+                $queueConnection = config('aftership-laravel.web_hook.listener.queue_connection');
+                $queueName = config('aftership-laravel.web_hook.listener.queue_name');
 
                 if (empty($queueConnection)) {
                     if (empty($queueName)) {
